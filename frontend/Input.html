@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter Location</title>
+</head>
+<body style="background: #121212; color: white; font-family: sans-serif;">
+  <h2>Enter Your Details</h2>
+  <input type="text" id="name" placeholder="Enter your name" /><br><br>
+  <select id="gender">
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select><br><br>
+  <input type="text" id="location" placeholder="Enter your location (city)" /><br><br>
+  <button onclick="submitData()">Submit</button>
+
+  <script>
+    function submitData() {
+      const name = document.getElementById("name").value.trim();
+      const gender = document.getElementById("gender").value;
+      const location = document.getElementById("location").value.trim();
+
+      if (!name || !location) {
+        alert("Name and location are required.");
+        return;
+      }
+
+      // Store in localStorage
+      localStorage.setItem("userData", JSON.stringify({ name, gender, location }));
+
+      // Redirect to second page
+      window.location.href = "EchoVoice.html";
+    }
+  </script>
+</body>
+</html>

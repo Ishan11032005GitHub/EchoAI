@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat App</title>
+  <link rel="stylesheet" href="chat.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="dark-mode">
+  <!-- Header -->
+  <div class="header-controls">
+    <div id="EchoAI">Convo<span id="AIInEchoAI">AI</span></div>
+    <div class="right-controls">
+      <div class="top-buttons">
+        <button id="clearHistory" class="danger-btn">🗑️ Clear History</button>
+        <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme & Back Button -->
+  <div class="theme-toggle-wrapper">
+    <button id="backBtn" class="back-btn">🔙</button>
+    <button id="toggleTheme" class="theme-btn">🌓</button>
+  </div>
+
+  <!-- Chat Area -->
+  <div class="chat-container"></div>
+
+  <!-- Chat Input Section -->
+  <div class="chat-input-area">
+    <div id="prompt" class="prompt-box" contenteditable="true" placeholder="Type your message..."></div>
+
+    <div class="buttons">
+      <button id="submitbtn" class="primary-btn">Send</button>
+      <button id="voiceSearch" class="icon-btn">🎤 Voice Search</button>
+
+      <div class="file-upload-container">
+        <label for="fileInput" class="primary-btn">📄 Upload File</label>
+        <input type="file" id="fileInput" multiple style="display: none" />
+
+        <div id="filePreviewContainer" class="file-preview-box">
+          <strong>File:</strong>
+          <div id="fileTagList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="chat.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      document.body.classList.toggle('light-mode', savedTheme === 'light');
+      document.getElementById('toggleTheme')?.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      });
+    });
+
+    document.getElementById('backBtn')?.addEventListener('click', () => {
+      window.location.href = "home.html";
+    });
+  </script>
+</body>
+</html>

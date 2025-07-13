@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PixelMuse - AI Image Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="imageGenerator.css">
+</head>
+<body class="dark-mode">
+
+  <!-- Header -->
+  <div class="header-controls">
+    <div id="PixelMuse">Pixel<span id="MuseInPixelMuse">Muse</span></div>
+    <div class="right-controls">
+      <div class="top-buttons">
+        <button id="clearHistory" class="danger-btn">🗑️ Clear History</button>
+        <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme & Back Button -->
+  <div class="theme-toggle-wrapper">
+    <button id="backBtn" class="back-btn">🔙</button>
+    <button id="toggleTheme" class="theme-btn">🌓</button>
+  </div>
+
+  <h1>AI Image Generator 🎨</h1>
+
+  <select id="modelSelect">
+    <option value="Deliberate">Deliberate (Photorealistic)</option>
+    <option value="DreamShaper">DreamShaper (Fantasy Art)</option>
+    <option value="RevAnimated">RevAnimated (Anime Style)</option>
+    <option value="SDXL">Stable Diffusion XL (Balanced)</option>
+  </select>
+
+  <input type="text" id="imagePrompt" placeholder="Describe your image (e.g. 'a cat astronaut in space')" />
+  <button id="generateImageBtn">
+    <i class="fas fa-magic"></i> Generate Image
+  </button>
+
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+    <span class="progress-text">Ready</span>
+  </div>
+
+  <div id="imageResultContainer"></div>
+
+  <script src="imageGenerator.js"></script>
+</body>
+</html>
