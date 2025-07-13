@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-  const uri = 'mongodb+srv://Ishan11032005:Ishan11032005%40ATLAS@users.ru6tdqt.mongodb.net/nexusbot?retryWrites=true&w=majority';
+  const uri = process.env.MONGODB_URI;;
 
   try {
     console.log('Connecting to MongoDB...');
