@@ -1,17 +1,21 @@
+// models/User.js
 import mongoose from 'mongoose';
+
 const userSchema = new mongoose.Schema({
-  name: { type: String },
-  email: { type: String, required: true, unique: true },
-  password: { type: String }, // null for OAuth users
-  provider: {
-    type: String,
-    enum: ['local', 'google', 'facebook'],
-    default: 'local'
-  },
-  providerId: { type: String },
-  profilePicture: { type: String }
-}, { timestamps: true });
+  googleId: String,
+  facebookId: String,
+  name: String,
+  email: String,
+  password: String,
+  profilePicture: String,
+  provider: String,
+  providerId: String,
+  isVerified: {
+    type: Boolean,
+    default: false
+  }
+  // Add other fields if needed
+});
 
 const User = mongoose.model('User', userSchema);
-
 export default User;
