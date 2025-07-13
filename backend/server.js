@@ -187,46 +187,6 @@ app.get('/api/auth/verify', async (req, res) => {
   }
 });
 
-// ========== Facebook Strategy ==========
-passport.use(new FacebookStrategy({
-  clientID: process.env.FACEBOOK_APP_ID,
-  clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: `${process.env.BACKEND_BASE_URL}/auth/facebook/callback`,
-  profileFields: ['id', 'emails', 'name', 'displayName', 'photos'],
-  passReqToCallback: true
-}, async (req, accessToken, refreshToken, profile, done) => {
-  try {
-    const email = profile.emails?.[0]?.value || `${profile.id}@facebook.com`;
-    let user = await User.findOne({
-      $or: [
-        { email },
-        { providerId: profile.id }
-      ]
-    });
-
-    if (!user) {
-      user = new User({
-        name: profile.displayName || `${profile.name.givenName} ${profile.name.familyName}`,
-        email,
-        provider: 'facebook',
-        providerId: profile.id,
-        profilePicture: profile.photos?.[0]?.value || null,
-        isVerified: true
-      });
-      await user.save();
-    } else if (!user.provider) {
-      user.provider = 'facebook';
-      user.providerId = profile.id;
-      user.isVerified = true;
-      await user.save();
-    }
-
-    return done(null, user);
-  } catch (error) {
-    return done(error, null);
-  }
-}));
-
 // ========== Signup ==========
 app.post('/signup', async (req, res) => {
   try {
