@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NexusBot - Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
+    }
+    .light-mode {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #f5f5f5;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .dark-mode .container {
+      background-color: #2d2d2d;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input {
+      padding: 0.8rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    .dark-mode input {
+      background-color: #333;
+      color: #fff;
+      border-color: #444;
+    }
+    button {
+      padding: 0.8rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .theme-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem;
+      background: transparent;
+      border: 1px solid;
+    }
+    .oauth-btn {
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .oauth-btn:hover {
+      filter: brightness(1.1);
+    }
+    .oauth-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    hr {
+      margin: 1rem 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .error-message {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+  <button id="toggleTheme" class="theme-btn">🌓</button>
+  <h1 style="font-weight: 700;text-align: center;">EchoAI</h1>
+
+  <div class="container">
+    <h1>Create Your Account</h1>
+    <form id="signupForm">
+      <div id="errorDisplay" class="error-message hidden"></div>
+
+      <div>
+        <label for="nameInput">Full Name</label>
+        <input type="text" id="nameInput" placeholder="John Doe" required />
+      </div>
+      <div>
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" placeholder="john@example.com" required />
+      </div>
+      <div>
+        <label for="passwordInput">Password</label>
+        <input type="password" id="passwordInput" placeholder="At least 8 characters" required minlength="8" />
+      </div>
+      <div>
+        <label for="confirmPasswordInput">Confirm Password</label>
+        <input type="password" id="confirmPasswordInput" placeholder="Re-enter your password" required />
+      </div>
+      <div>
+        <label for="profilePictureInput">Profile Picture (optional)</label> <br>
+        <input type="file" id="profilePictureInput" accept="image/*" />
+      </div>
+      <div>
+        <input type="checkbox" id="agreeCheckbox" required />
+        <label for="agreeCheckbox" style="cursor: pointer;">
+          I agree to the <a href="termsAndConditions.html" style="color: #4CAF50;">Terms and Conditions</a>
+        </label>
+      </div>
+      <button type="submit" id="submitBtn">
+        <span id="submitText">Sign Up</span>
+        <span id="submitSpinner" class="hidden">⏳</span>
+      </button>
+      <p>Already have an account? <a href="signin.html" style="color: #4CAF50;">Log in</a></p>
+    </form>
+
+    <hr />
+    <div class="oauth-container">
+      <a class="oauth-btn" href="https://echoai-backend-development.up.railway.app/auth/google" style="background-color: #db4437;">
+        Sign up with Google
+      </a>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>

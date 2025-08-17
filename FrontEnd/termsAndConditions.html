@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EchoAI - Terms & Conditions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a1a;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .light-mode {
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #2a2a2a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .light-mode .container {
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #4CAF50;
+    }
+
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background-color: transparent;
+      border: 1px solid #4CAF50;
+      color: #4CAF50;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    /* Scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #2e2e2e;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+  border: 2px solid #2e2e2e;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-buttons">
+      <button onclick="goBack()">← Back</button>
+      <button onclick="toggleTheme()">🌓 Theme</button>
+    </div>
+
+    <h1>Terms & Conditions</h1>
+    <p>Welcome to EchoAI! By accessing or using our application, you agree to be bound by the following terms and conditions.</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By using EchoAI, you agree to comply with and be legally bound by these terms. If you do not agree, please do not use the application.</p>
+
+    <h2>2. User Responsibilities</h2>
+    <ul>
+      <li>You are responsible for maintaining the confidentiality of your account and password.</li>
+      <li>You agree to provide accurate, complete, and current information.</li>
+    </ul>
+
+    <h2>3. Prohibited Activities</h2>
+    <p>You agree not to misuse the services. This includes but is not limited to:</p>
+    <ul>
+      <li>Reverse engineering or extracting source code</li>
+      <li>Sending harmful or illegal content</li>
+      <li>Abusing the AI model for offensive content generation</li>
+    </ul>
+
+    <h2>4. Privacy</h2>
+    <p>Your use of the application is subject to our <a href="privacy.html">Privacy Policy</a>.</p>
+
+    <h2>5. Changes to Terms</h2>
+    <p>We may update these terms from time to time. Continued use of the application after changes means you accept the updated terms.</p>
+
+    <h2>6. Contact</h2>
+    <p>If you have questions about these Terms, please contact us at <a href="mailto:support@echoai.app">support@echoai.app</a>.</p>
+
+    <p style="margin-top: 2rem;">© 2025 EchoAI. All rights reserved.</p>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href="signup.html";
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>
