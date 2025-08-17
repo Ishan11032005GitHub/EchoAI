@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Echo AI - Home</title>
+  <link rel="stylesheet" href="home.css" />
+  <style>
+    /* ========== Hamburger Menu ========== */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--accent-color);
+  z-index: 110;
+}
+
+/* ========== Responsive Navbar ========== */
+@media (max-width: 768px) {
+  .modelnav {
+  height: 120px;
+  width: 120px;
+  font-size: 1.2em;
+  padding-top: 30px;
+  margin-bottom: 5vh;
+}
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+    order: 3;
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .navlink {
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .logout-btn {
+    order: 2;
+    margin-top: 10px;
+  }
+
+  .nav-toggle:checked + .hamburger + .nav {
+    display: block;
+  }
+  .hero {
+  flex-direction: column;
+  text-align: center;
+  padding: 40px 5%;
+  height: auto;
+}
+
+.hero-text {
+  margin-bottom: 30px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+}
+
+#typewriter {
+  font-size: 1rem;
+}
+
+.hero-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.features {
+  height: auto;
+  padding: 40px 5%;
+}
+
+.features h2 {
+  font-size: 1.8rem;
+}
+
+.feature-cards {
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+}
+.about {
+  padding: 40px 5%;
+  height: auto;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.about p,
+.about ul {
+  font-size: 0.95rem;
+}
+
+.about ul {
+  padding-left: 15px;
+}
+.models {
+  padding: 60px 5%;
+  height: auto;
+}
+
+.model-links {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modelnav {
+  height: 80px;
+  width: 80px;
+  font-size: 1rem;
+}
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 5%;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  gap: 30px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hero-image {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#typewriter {
+  font-size: 1.2rem;
+  display: inline-block;
+  border-right: 2px solid var(--text-color);
+  margin-bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 1.5em;
+}
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo" style="cursor: pointer;">Echo<span>AI</span></div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="hamburger">&#9776;</label>
+
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a class="navlink" href="#features">Features</a></li>
+      <li><a class="navlink" href="#models">Models</a></li>
+      <li><a class="navlink" href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <button class="btn logout-btn" id="logoutBtn" style="cursor: pointer;">Logout</button>
+</header>
+
+  <button class="theme-btn" onclick="toggleTheme()">🌓</button>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Echo AI</h1>
+      <div class="typewriter" id="typewriter">Your personal AI assistant for conversations, creativity, and productivity.</div> <br>
+      <a href="#models" class="btn">Get Started</a>
+    </div>
+    <div class="hero-image">
+      <img id="heroProfileImage" src="user.png" alt="Echo AI Illustration" />
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2>Features</h2>
+    <div class="feature-cards">
+      <details class="card">
+        <summary>Smart Conversations</summary>
+        <p>Chat with an intelligent AI that understands context and replies in real time.</p>
+      </details>
+      <details class="card">
+        <summary>Voice Search</summary>
+        <p>Talk to Echo AI hands-free using voice commands powered by ML models.</p>
+      </details>
+      <details class="card">
+        <summary>Image Generation</summary>
+        <p>Generate AI images on demand and explore visual creativity like never before.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="models" id="models">
+    <h2>Models</h2>
+    <div class="model-links">
+      <a href="chat.html"><div class="modelnav">ConvoAI</div></a>
+      <a href="imageGenerator.html"><div class="modelnav">PixelMuse</div></a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+  <h2>About EchoAI</h2>
+  <p style="text-align: left;">
+    EchoAI is an advanced, multi-modal AI assistant platform designed to enable seamless interaction through text, voice, and file uploads — all backed by powerful image generation capabilities. Built with a clean, modern UI and a robust full-stack architecture, EchoAI offers:
+  </p>
+  <ul style="text-align: left;">
+    <li><strong>Smart Chat Interface:</strong> Engage in natural conversations with AI, featuring real-time typing effects, Markdown-formatted replies, and a dynamic light/dark theme toggle.</li>
+    <li><strong>File Upload & Analysis:</strong> Upload PDFs, DOCX, XLSX, and more — EchoAI intelligently reads and integrates their contents to provide context-aware answers.</li>
+    <li><strong>Voice Command Support:</strong> Interact hands-free using speech recognition via the Web Speech API with real-time transcription.</li>
+    <li><strong>AI Image Generation:</strong> Create stunning visuals from text prompts in the dedicated PixelMuse section using state-of-the-art diffusion models.</li>
+    <li><strong>Chat History & Persistence:</strong> Access and manage your past conversations and uploads — securely saved to your account for future reference.</li>
+    <li><strong>Responsive & Accessible Design:</strong> Enjoy a fluid, consistent experience across all devices, with accessible UI and smooth transitions.</li>
+    <li><strong>🔐 Secure Authentication:</strong> Token-based authentication ensures your data and interactions remain private and protected.</li>
+  </ul>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Echo AI. All rights reserved.</p>
+    <div class="slogan">EchoAI – Intelligence that echoes your ideas, however you express them.</div>
+  </footer>
+
+  <script>
+    // 🧠 Token Verification Function (Declared globally for reuse)
+const verifyAndInit = async (token) => {
+  try {
+    const res = await fetch('https://echoai-backend-development.up.railway.app/api/auth/verify', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    });
+
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+
+    const data = await res.json();
+    if (!data.user) throw new Error('No user data in response');
+
+    localStorage.setItem('authToken', token);
+    localStorage.setItem('currentUser', JSON.stringify(data.user));
+    window.history.replaceState({}, '', 'home.html');
+    initUI();
+  } catch (err) {
+    console.error('Verification failed:', err);
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('currentUser');
+    window.location.href = `signin.html?error=session_expired`;
+  }
+};
+
+// ⏳ Wait for DOM
+document.addEventListener('DOMContentLoaded', () => {
+  // 👁️ Hide UI initially to prevent flash
+  document.body.style.visibility = 'hidden';
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const tokenFromURL = urlParams.get('token');
+
+  if (tokenFromURL) {
+    console.log('🔑 OAuth token found in URL');
+    verifyAndInit(tokenFromURL);
+    return;
+  }
+
+  const authToken = localStorage.getItem('authToken');
+  let currentUser = {};
+
+  try {
+    currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+  } catch {
+    console.warn('Corrupted user data. Clearing...');
+    localStorage.removeItem('currentUser');
+    window.location.href = 'signin.html';
+    return;
+  }
+
+  if (!authToken) {
+    console.warn('⛔ No token in localStorage. Redirecting...');
+    window.location.href = 'signin.html';
+    return;
+  }
+
+  if (!currentUser.id) {
+    console.warn('📭 Token found but currentUser missing. Verifying...');
+    verifyAndInit(authToken);
+    return;
+  }
+
+  console.log('✅ Already logged in as:', currentUser.username || currentUser.name);
+  initUI();
+});
+
+// ✅ UI Setup After Login Success
+function initUI() {
+  // 🪪 Logout Handler
+  document.getElementById('logoutBtn')?.addEventListener('click', () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('currentUser');
+    window.location.replace('signin.html');
+  });
+
+  // 🌗 Theme Setup
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  } else {
+    document.body.classList.remove('light-mode');
+  }
+
+  // ⌨️ Typewriter Effect
+  setupTypewriter();
+
+  // 👤 Profile Image
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  const heroImage = document.getElementById('heroProfileImage');
+
+  if (heroImage) {
+    if (currentUser.profilePicture && currentUser.profilePicture.trim() !== "") {
+      heroImage.src = currentUser.profilePicture;
+      heroImage.alt = `${currentUser.name || 'User'}'s profile picture`;
+    } else {
+      heroImage.src = 'user.png';
+      heroImage.alt = 'Echo AI Illustration';
+    }
+  }
+
+  // ✅ Reveal UI only after init
+  document.body.style.visibility = 'visible';
+}
+
+// 🎬 Typewriter Animation
+function setupTypewriter() {
+  const textElement = document.getElementById("typewriter");
+  const fullText = "Your personal AI assistant for conversations, creativity, and productivity.";
+  let index = 0;
+  let direction = 1;
+  const speed = 40;
+  const pauseDelay = 1500;
+
+  function typeLoop() {
+    if (direction === 1) {
+      textElement.textContent = fullText.substring(0, index + 1);
+      index++;
+      if (index === fullText.length) {
+        direction = -1;
+        setTimeout(typeLoop, pauseDelay);
+        return;
+      }
+    } else {
+      textElement.textContent = fullText.substring(0, index - 1);
+      index--;
+      if (index === 0) {
+        direction = 1;
+        setTimeout(typeLoop, pauseDelay);
+        return;
+      }
+    }
+    setTimeout(typeLoop, speed);
+  }
+
+  typeLoop();
+}
+
+// 🌙 Theme Toggle Handler
+function toggleTheme() {
+  const body = document.body;
+  const isLight = body.classList.toggle('light-mode');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+  </script>
+</body>
+</html>

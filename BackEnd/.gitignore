@@ -1,0 +1,14 @@
+node_modules/
+
+*.log
+
+.env
+
+
+uploads/
+result.png
+
+.vscode/
+
+build/
+dist/
