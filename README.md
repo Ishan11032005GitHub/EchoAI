@@ -48,7 +48,7 @@ This project provides a seamless interface for AI-powered text conversations and
 ## 📬 Contact
 
 - 📧 **Email**: ishan11032005@gmail.com  
-- 💼 **LinkedIn**: [Ishan Tiwari]([https://www.linkedin.com/in/ishan-tiwari](https://www.linkedin.com/in/ishan-tiwari-69b5a732a/))  
+- 💼 **LinkedIn**: [Ishan Tiwari]([[https://www.linkedin.com/in/ishan-tiwari](https://www.linkedin.com/in/ishan-tiwari-69b5a732a/)])  
 - 🧑‍💻 **GitHub**: [Ishan11032005GitHub](https://github.com/Ishan11032005GitHub)  
 
 ---
