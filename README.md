@@ -16,22 +16,22 @@ This project provides a seamless interface for AI-powered text conversations and
 
 ## 📌 Features
 
-- ✅ **AI Chat**: Converse in real-time with an AI assistant powered by Gemini/OpenRouter.  
-- 🎨 **Image Generation**: Generate AI-powered images using Replicate API.  
-- 📝 **Chat History**: Stores and displays past conversations and generated images (MongoDB).  
-- 🔐 **Authentication**: Secure login and signup system.  
-- 🌗 **Dark/Light Theme Toggle**: Switch between dark and light modes with a single click. Your choice is saved automatically.  
-- ⚡ **Responsive Design**: Works seamlessly across all devices.  
-- 🚫 **Error Handling**: Friendly error messages for failed requests or invalid inputs.  
+- ✅ **AI Chat**: Converse in real-time with an AI assistant powered by OpenRouter.
+- 🎨 **Image Generation**: Generate AI-powered images using STABLE HORDE API.
+- 📝 **Chat History**: Stores and displays past conversations and generated images (MongoDB).
+- 🔐 **Authentication**: Secure login and signup system.
+- 🌗 **Dark/Light Theme Toggle**: Switch between dark and light modes with a single click. Your choice is saved automatically.
+- ⚡ **Responsive Design**: Works seamlessly across all devices.
+- 🚫 **Error Handling**: Friendly error messages for failed requests or invalid inputs.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Frontend** – React.js, Tailwind CSS, Framer Motion, shadcn/ui, Lucide Icons  
-- **Backend** – Node.js, Express.js  
-- **Database** – MongoDB Atlas (user authentication & chat history)  
-- **AI APIs** – Gemini/OpenRouter (chat), Replicate (image generation), Whisper (voice recognition – optional)  
+- **Frontend** – React.js, CSS3
+- **Backend** – Node.js, Express.js
+- **Database** – MongoDB Atlas (user authentication & chat history)
+- **APIs** – OpenRouter(chat), STABLE HORDE(image generation), WebSpeech(voice search)
 
 ---
 
